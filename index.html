@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>morimori archive 🎀✦</title>
-<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=DotGothic16&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=DotGothic16&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root { 
-    --bg-pink: #fdf2f8; /* 梦幻低饱和粉 */
-    --text-y2k: #9b708b; /* 复古紫粉色文字 */
-    --accent-y2k: #fbcfe8; /* 亮粉色装饰 */
+    --bg-pink: #fdf2f8; 
+    --text-y2k: #9b708b; 
+    --accent-y2k: #fbcfe8; 
     --white: #ffffff;
   }
   
@@ -17,18 +17,18 @@
   
   body { 
     background-color: var(--bg-pink); 
-    /* 增加底部的细微网格感纹理 */
     background-image: radial-gradient(rgba(155, 112, 139, 0.05) 1px, transparent 0);
     background-size: 30px 30px;
     color: var(--text-y2k); 
     overflow-x: hidden; 
+    font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
   }
 
-  /* 🎀 顶部导航：Midnight Fiction 风格标题 */
+  /* 🎀 顶部导航：Midnight Fiction 风格 */
   header { 
-    position: fixed; top: 0; width: 100%; height: 100px; 
+    position: fixed; top: 0; width: 100%; height: 110px; 
     display: flex; flex-direction: column; justify-content: center; align-items: center; 
-    z-index: 100; background: rgba(253, 242, 248, 0.8); backdrop-filter: blur(10px);
+    z-index: 100; background: rgba(253, 242, 248, 0.85); backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(155, 112, 139, 0.1);
   }
 
@@ -36,56 +36,58 @@
 
   .logo { 
     font-family: 'Pinyon Script', cursive;
-    font-size: 52px; 
+    font-size: 56px; 
     color: var(--text-y2k);
-    text-shadow: 2px 2px 0px var(--white), 0px 0px 8px rgba(251, 207, 232, 0.6);
+    text-shadow: 2px 2px 0px var(--white), 0px 0px 12px rgba(251, 207, 232, 0.6);
   }
 
-  /* ✦ 小星星装饰及动画 */
+  /* ✦ 星星闪烁动画 */
   .logo::before, .logo::after {
     content: "✦";
     position: absolute; top: 50%; transform: translateY(-50%);
     font-size: 18px; color: var(--accent-y2k);
-    animation: star-blink 1.5s infinite ease-in-out;
+    animation: star-blink 2s infinite ease-in-out;
   }
-  .logo::before { left: -35px; }
-  .logo::after { right: -35px; animation-delay: 0.7s; }
+  .logo::before { left: -40px; }
+  .logo::after { right: -40px; animation-delay: 1s; }
 
   @keyframes star-blink {
-    0%, 100% { opacity: 0.3; transform: translateY(-50%) scale(0.8); }
-    50% { opacity: 1; transform: translateY(-50%) scale(1.2); filter: drop-shadow(0 0 5px #fff); }
+    0%, 100% { opacity: 0.2; transform: translateY(-50%) scale(0.7); }
+    50% { opacity: 1; transform: translateY(-50%) scale(1.3); filter: drop-shadow(0 0 8px #fff); }
   }
 
   .logo-sub { 
-    font-family: 'Montserrat', sans-serif; font-size: 9px; 
-    letter-spacing: 0.3em; opacity: 0.6; margin-top: -10px; text-transform: uppercase;
+    font-size: 9px; letter-spacing: 0.4em; opacity: 0.6; 
+    margin-top: -12px; text-transform: uppercase; font-weight: 300;
   }
 
-  /* 🖼️ 策展画廊 */
-  .gallery { padding: 140px 20px 100px; display: flex; flex-direction: column; align-items: center; gap: 60px; }
+  /* 🖼️ 策展画廊排版 */
+  .gallery { padding: 160px 20px 100px; display: flex; flex-direction: column; align-items: center; gap: 70px; }
 
   .card { 
-    background: var(--white); padding: 15px 15px 45px 15px;
-    border-radius: 2px; box-shadow: 8px 8px 0px rgba(155, 112, 139, 0.05);
-    width: 100%; max-width: 360px; transition: 0.4s ease;
+    background: var(--white); padding: 15px 15px 40px 15px;
+    border-radius: 2px; box-shadow: 10px 10px 0px rgba(155, 112, 139, 0.04);
+    width: 100%; max-width: 380px; transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
-  .card:hover { transform: translateY(-5px) rotate(1deg); box-shadow: 12px 12px 0px rgba(155, 112, 139, 0.08); }
+  .card:hover { transform: translateY(-8px) rotate(-1deg); box-shadow: 15px 15px 0px rgba(155, 112, 139, 0.07); }
 
-  .specimen-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 25px; filter: saturate(0.9); }
+  .specimen-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 25px; filter: contrast(1.02) saturate(0.95); }
 
-  /* 像素风编号标签 */
+  /* 像素风标签 */
   .num { 
     display: inline-block; font-family: 'DotGothic16', sans-serif;
     background: var(--accent-y2k); color: var(--white);
-    padding: 2px 10px; border-radius: 20px; font-size: 9px; margin-bottom: 12px;
+    padding: 1px 12px; border-radius: 20px; font-size: 9px; margin-bottom: 15px;
   }
 
-  .title { font-size: 15px; font-weight: 400; margin-bottom: 8px; font-family: 'Hiragino Mincho ProN', serif; }
-  .cn-note { font-size: 11px; opacity: 0.7; line-height: 1.8; font-family: sans-serif; padding: 0 10px; }
+  /* 中英双语排版 */
+  .title-en { font-size: 16px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; color: #7a5e70; }
+  .title-cn { font-size: 12px; opacity: 0.7; line-height: 1.8; font-weight: 300; letter-spacing: 0.05em; }
 
   /* 🎀 鼠标指针 */
-  .cursor { position: fixed; pointer-events: none; z-index: 9999; font-size: 24px; transform: translate(-50%, -50%); }
+  .cursor { position: fixed; pointer-events: none; z-index: 9999; font-size: 26px; transform: translate(-50%, -50%); }
 
+  footer { padding: 40px; text-align: center; font-size: 9px; letter-spacing: 0.2em; opacity: 0.4; text-transform: uppercase; }
 </style>
 </head>
 <body>
@@ -96,59 +98,63 @@
   <div class="logo-container">
     <h1 class="logo">morimori</h1>
   </div>
-  <p class="logo-sub">22nd Collection Archive</p>
+  <p class="logo-sub">Private Archive | Vol. 01</p>
 </header>
 
 <div class="gallery">
   <section class="card">
     <img src="IMG_1.JPG" class="specimen-img">
     <span class="num">NO.01</span>
-    <h2 class="title">街のささやき</h2>
-    <p class="cn-note">在静止的街道中，寻找一份属于奶油色的秩序。</p>
+    <h2 class="title-en">Urban Whisper</h2>
+    <p class="title-cn">在静止的街道中，捕捉一份奶油色的秩序。</p>
   </section>
 
   <section class="card">
     <img src="IMG_2.JPG" class="specimen-img">
     <span class="num">NO.02</span>
-    <h2 class="title">magnetic</h2>
-    <p class="cn-note">光影在气泡中发生折射，这是梦境的入口。</p>
+    <h2 class="title-en">Magnetic Revelry</h2>
+    <p class="title-cn">梦境在气泡中折射，这是万物吸引的预感。</p>
   </section>
 
   <section class="card">
-    <img src="IMG_5.JPG" class="specimen-img">
+    <img src="IMG_8.JPG" class="specimen-img">
     <span class="num">NO.03</span>
-    <h2 class="title">桃の記憶</h2>
-    <p class="cn-note">触手可及的柔软，是封存在记忆里的轻盈底色。</p>
-  </section>
-
-  <section class="card">
-    <img src="IMG_3.JPG" class="specimen-img">
-    <span class="num">NO.04</span>
-    <h2 class="title">終章：純白</h2>
-    <p class="cn-note">所有的繁杂最终回归于纯净，如同呼吸般自然。</p>
+    <h2 class="title-en">Peachy Amnesia</h2>
+    <p class="title-cn">触手可及的柔软，是封存在记忆里的轻盈底色。</p>
   </section>
 
   <section class="card">
     <img src="IMG_4.JPG" class="specimen-img">
+    <span class="num">NO.04</span>
+    <h2 class="title-en">The White Chapter</h2>
+    <p class="title-cn">所有的繁杂回归纯净，如同呼吸般自然舒展。</p>
+  </section>
+
+  <section class="card">
+    <img src="IMG_5.JPG" class="specimen-img">
     <span class="num">NO.05</span>
-    <h2 class="title">細部の美学</h2>
-    <p class="cn-note">柔软的丝带下，藏着最坚定的审美意志。</p>
+    <h2 class="title-en">Ribbon Logic</h2>
+    <p class="title-cn">柔软的丝带之下，藏着最坚定的审美意志。</p>
   </section>
 
   <section class="card">
     <img src="IMG_6.JPG" class="specimen-img">
     <span class="num">NO.06</span>
-    <h2 class="title">記憶の箱</h2>
-    <p class="cn-note">封存一份不善言辞的温柔礼物。</p>
+    <h2 class="title-en">Gift From Echo</h2>
+    <p class="title-cn">封装一份不善言辞的温柔，送给未来的自己。</p>
   </section>
 
   <section class="card">
     <img src="IMG_7.JPG" class="specimen-img">
     <span class="num">NO.07</span>
-    <h2 class="title">柔らかい反抗</h2>
-    <p class="cn-note">甜蜜中带有一丝金属质感，是少女感里的一抹叛逆。</p>
+    <h2 class="title-en">Lolly Rebellion</h2>
+    <p class="title-cn">甜蜜中带有一抹金属质感，是属于少女的叛逆。</p>
   </section>
 </div>
+
+<footer>
+  © Morimori Archive | Collect what you love
+</footer>
 
 <script>
   const cursor = document.querySelector('.cursor');
